@@ -21,3 +21,6 @@ export const database = drizzle({
     schema: schema,
     casing: 'snake_case',
 });
+
+export type DatabaseClient = typeof database;
+export type DatabaseTransaction = Parameters<Parameters<DatabaseClient['transaction']>[0]>[0];
