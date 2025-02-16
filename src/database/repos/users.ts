@@ -1,6 +1,10 @@
 import { DatabaseConnection, DatabaseRepository } from '../../lib/DatabaseRepository';
 
-export class UserRepository extends DatabaseRepository {
+export interface IUserRepository {
+    // Define crud methods here
+}
+
+export class UserRepository extends DatabaseRepository implements IUserRepository  {
     constructor(connection: DatabaseConnection) {
         super(connection);
     }
