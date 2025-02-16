@@ -5,7 +5,7 @@ import { z } from 'zod';
  Examples for User entity: DTO = zUser, type = User; DTO = zUserCreate, types = UserCreate */
 
 export const zUser = z.object({
-    id: z.number().int(),
+    id: z.string().uuid(),
     name: z.string(),
 });
 
