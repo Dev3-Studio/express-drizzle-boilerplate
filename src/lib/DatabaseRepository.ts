@@ -1,6 +1,4 @@
-import { DatabaseClient, DatabaseTransaction } from '../database';
-
-export type DatabaseConnection = DatabaseClient | DatabaseTransaction;
+import { DatabaseConnection } from '../database';
 
 export class DatabaseRepository {
     private connection: DatabaseConnection;

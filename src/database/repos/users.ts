@@ -1,4 +1,5 @@
-import { DatabaseConnection, DatabaseRepository } from '../../lib/DatabaseRepository';
+import { DatabaseRepository } from '../../lib/DatabaseRepository';
+import { DatabaseConnection } from '../index';
 
 export interface IUserRepository {
     // Define crud methods here

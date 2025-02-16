@@ -24,3 +24,4 @@ export const database = drizzle({
 
 export type DatabaseClient = typeof database;
 export type DatabaseTransaction = Parameters<Parameters<DatabaseClient['transaction']>[0]>[0];
+export type DatabaseConnection = DatabaseClient | DatabaseTransaction;
