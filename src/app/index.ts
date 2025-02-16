@@ -23,4 +23,4 @@ app.use('/ping', pingRoutes);
 // Error handling
 app.use(exceptionHandler);
 
-export { app };
+export default app;
