@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { env } from '../lib/env';
-import pingRoutes from '../routes/ping';
+import pingRoutes from '../components/ping';
 import { exceptionHandler } from '../middleware/exception';
 
 const app = express();
