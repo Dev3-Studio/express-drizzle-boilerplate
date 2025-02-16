@@ -1,4 +1,4 @@
-import { DatabaseRepository } from '../../lib/DatabaseRepository';
+import { DatabaseRepository } from '../../common/DatabaseRepository';
 import { DatabaseConnection } from '../index';
 
 export interface IUserRepository {

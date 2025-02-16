@@ -1,5 +1,5 @@
 import { app } from './app';
-import { env } from './lib/env';
+import { env } from './common/env';
 
 async function init() {
     app.listen(env('PORT'), () => {

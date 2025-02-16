@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { env } from '../lib/env';
+import { env } from '../common/env';
 import pingRoutes from '../components/ping';
 import { exceptionHandler } from '../middleware/exception';
 

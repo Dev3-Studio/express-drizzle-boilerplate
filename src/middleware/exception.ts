@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { isCustomHttpError } from '../lib/httpErrors';
+import { isCustomHttpError } from '../common/httpErrors';
 
 export async function exceptionHandler(err: Error, req: Request, res: Response, next: NextFunction) {
     if (isCustomHttpError(err)) {

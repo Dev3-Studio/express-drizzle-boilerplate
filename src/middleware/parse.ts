@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 import { fromError } from 'zod-validation-error';
-import { BadRequestError } from '../lib/httpErrors';
+import { BadRequestError } from '../common/httpErrors';
 
 export function parseBodyMiddleware(schema: z.ZodSchema<never>) {
     return (req: Request, res: Response, next: NextFunction) => {

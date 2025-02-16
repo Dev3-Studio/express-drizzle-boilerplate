@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
 import fs from 'fs';
 import * as schema from './schema';
-import { env } from '../lib/env';
+import { env } from '../common/env';
 
 function getCertificate() {
     try {
