@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 import { fromError } from 'zod-validation-error';
+import { BadRequestError } from '../lib/httpErrors';
 
 export function parseBodyMiddleware(schema: z.ZodSchema<never>) {
     return (req: Request, res: Response, next: NextFunction) => {
@@ -9,9 +10,8 @@ export function parseBodyMiddleware(schema: z.ZodSchema<never>) {
             next();
         } catch (err) {
             const validationError = fromError(err);
-            res.status(400).send({
-                error: 'Invalid body; ' + validationError.toString(),
-            });
+            const errorMessage = '[Invalid body] ' + validationError.toString();
+            throw new BadRequestError(errorMessage);
         }
     };
 }
@@ -23,9 +23,8 @@ export function parseQueryMiddleware(schema: z.ZodSchema<never>) {
             next();
         } catch (err) {
             const validationError = fromError(err);
-            res.status(400).send({
-                error: 'Invalid query; ' + validationError.toString(),
-            });
+            const errorMessage = '[Invalid query] ' + validationError.toString();
+            throw new BadRequestError(errorMessage);
         }
     };
 }
@@ -37,9 +36,8 @@ export function parseParamsMiddleware(schema: z.ZodSchema<never>) {
             next();
         } catch (err) {
             const validationError = fromError(err);
-            res.status(400).send({
-                error: 'Invalid params; ' + validationError.toString(),
-            });
+            const errorMessage = '[Invalid params] ' + validationError.toString();
+            throw new BadRequestError(errorMessage);
         }
     };
 }
